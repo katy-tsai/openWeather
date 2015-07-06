@@ -22,4 +22,4 @@ $ node server.js
 ```
 【step4. 連結 http://localhost:3000/】
 
-![Alt text](public/img/example1.png)
+![Alt text](https://github.com/katy-tsai/openWeather/blob/master/public/img/example1.PNG)
