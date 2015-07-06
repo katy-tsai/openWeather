@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+<title>Weather List</title>
+<script type="text/javascript" src="lib/angular/angular.js"></script>
+<script type="text/javascript" src="lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="core.js"></script>
+<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css">
+<style type="text/css">
+	.maxtemp{
+		background: #f0ad4e;
+		color:#fff;
+		 
+	}
+	.mintemp{
+		background:#999;
+		color:#fff;
+		 
+	}
+	.description{
+		font-style: italic;
+	}
+</style>
+</head>
+<body ng-controller="mainController"  ng-init="search()">
+	<div class="container">
+		<h1>一週天氣預報 :</h1>
+		<div id="city-form" class="row">
+			<form>
+				<div class="col-sm-4  text-center">
+					<input type="text" class="form-control input-lg text-center" placeholder="city name" ng-model="cityname"> 
+				</div>
+				<button class="btn btn-primary btn-lg" ng-click="search()">search</button>
+			</form>		
+		</div>
+		<div id ="weather-list" class="row">
+			<h3>{{city.name}} {{city.country}} </h3> <br>
+			<div ng-repeat="data in lists" >
+				<div class="row"><hr class="col-sm-6" ></div>
+				<div class="row">
+					
+					<div class="col-sm-1">{{data.dt*1000|date:'dd MMM'}}</div>
+					<div class="col-sm-1">
+						<img src="http://openweathermap.org/img/w/{{data.weather[0].icon}}.png">
+					</div>								
+					<div  class="col-sm-4">
+						<div class ="row">
+							<span class="maxtemp">{{data.temp.max}} °C  </span> &nbsp; 
+						    <span class="mintemp"> {{data.temp.min}}°C  </span> &nbsp; 
+						    <span class="description">{{data.weather[0].description}}</span>
+						</div>
+						<div class="row">
+							{{data.speed}} m/s
+						</div>
+						<div class="row">
+							clouds:{{data.clouds}} % ,  {{data.pressure}} hpa
+						</div>
+					</div>
+			</div>
+		</div>
+	 </div>   
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "openweather",
+  "version": "0.0.0",
+  "description": "sample application.",
+  "dependencies": {
+    "bootstrap": "~3",
+    "angular": "~1.2"
+  }
+}
