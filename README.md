@@ -1,7 +1,7 @@
 # openWeather
 一週天氣預測範例
 
-###download zip
+### download zip
 
 【step1.安裝須要的package】
 
